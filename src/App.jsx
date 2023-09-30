@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
-import './App.css'
 import axios from 'axios';
-import WeatherContainer from '../src/components/WeatherContainer.jsx'
+import { useEffect, useState } from 'react';
+import ContainerDarkLight from "../src/components/ContainerDarkLight.jsx";
+import './App.css';
+
 
 function App() {
 
   const [weather, setWeather] = useState(null)
-
+  const [dark, setDark] = useState(true)
   const success = (pos) => {
     const latitude = pos.coords.latitude;
     const longitude = pos.coords.longitude;
@@ -22,12 +23,11 @@ function App() {
     navigator.geolocation.getCurrentPosition(success)
   }, [])
 
-
   return (
     <>
-      <main className='font-["Lato"] flex justify-center items-center min-h-screen bg-black text-white'>
+      <main className='min-h-screen bg-[url(/fondo1_weather.png)] bg-no-repeat bg-cover'>
         {
-          weather === null ? <h3>cargando......</h3> : <WeatherContainer weather={weather}></WeatherContainer>
+          weather === null ? <h3>cargando......</h3> : <ContainerDarkLight weather={weather} dark={dark} setDark={setDark}/>
         }
 
       </main>
