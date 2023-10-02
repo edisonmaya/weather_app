@@ -3,11 +3,13 @@ const WeatherStat = ({icon, unit, value, dark}) => {
     const iconDark= icon+'_dark.svg'
     const iconLight= icon+'_light.svg'
     return (
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-1 items-center justify-center ">
                 {dark===true?
-                <img className="h-6 w-6 " src={iconDark} />
+                <>
+                <img className="h-5 w-5 " src={iconDark} />
+                </>
                 :
-                <img className="h-6 w-6" src={iconLight} />
+                <img className="h-5 w-5" src={iconLight} />
                 }
             <span>{value}{unit}</span>
         </div>
