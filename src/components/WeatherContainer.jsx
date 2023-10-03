@@ -4,7 +4,7 @@ import WeatherStat from '../components/WeatherStat.jsx';
 const WeatherContainer = ({ weather, dark, setDark }) => {
 
     const [isCelsius, setIsCelsius] = useState(true)
-    
+    console.log(weather);
     const changeUnitTemp = (temp) => {
         if (isCelsius) {
             const celsiusTemp = (temp - 273.15).toFixed(1)
@@ -18,9 +18,7 @@ const WeatherContainer = ({ weather, dark, setDark }) => {
     const handleChangeUnit = () => {
         setIsCelsius(!isCelsius);
     }
-/*
 
-*/
     return (
         <section className="grid gap-11 text-center ">
             <Button_slider dark={dark} setDark={setDark} ></Button_slider>
