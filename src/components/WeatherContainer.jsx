@@ -22,7 +22,7 @@ const WeatherContainer = ({ weather, dark, setDark }) => {
 
 */
     return (
-        <section className="grid gap-8 text-center ">
+        <section className="grid gap-11 text-center ">
             <Button_slider dark={dark} setDark={setDark} ></Button_slider>
             <h3 className='text-xl font-semibold'>{weather.name + ' '},{' ' + weather.sys.country}</h3>
             <div className='grid gap-5 sm:grid-cols-[1fr_auto]' >
