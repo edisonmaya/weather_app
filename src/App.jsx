@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <main className='min-h-screen bg-[url(/fondo1_weather.png)] bg-no-repeat bg-cover'>
+      <main className='min-h-screen bg-[url(/fondo1_weather.png)] bg-no-repeat bg-cover bg-center'>
         {
           weather === null ? <h3>cargando......</h3> : <ContainerDarkLight weather={weather} dark={dark} setDark={setDark}/>
         }
